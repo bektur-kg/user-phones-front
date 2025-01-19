@@ -8,4 +8,5 @@ export const requests = {
     addPhoneNumber: (data) => instance.post(`/phones`, data),
     deleteUserPhone: (id) => instance.delete(`/phones/${id}`),
     addUser: (data) => instance.post(`/users`, data),
+    deleteUser: (id) => instance.delete(`/users/${id}`),
 }

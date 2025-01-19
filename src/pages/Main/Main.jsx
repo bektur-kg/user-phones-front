@@ -59,6 +59,10 @@ const Main = () => {
                                     placeholder={"Name"}
                                     {...registerUser("name", {
                                         required: "Name is required",
+                                        maxLength: {
+                                            value: 100,
+                                            message: "Name max length is 100"
+                                        }
                                     })}
                                     className={"border w-full h-full py-2 px-4 outline-0"}
                                 />
@@ -101,7 +105,7 @@ const Main = () => {
                     </form>
                 )
             }
-            <ul className={"flex justify-around"}>
+            <ul className={"flex justify-around mt-10"}>
                 {
                     users.map(u => (
                         <UserCard
@@ -110,6 +114,7 @@ const Main = () => {
                             name={u.name}
                             email={u.email}
                             dateOfBirth={u.dateOfBirth}
+                            fetchUsers={fetchUsers}
                         />
                     ))
                 }
